@@ -1,1 +1,70 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Basics</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<script src="index.js"></script>
+    <div class="titleBar">
+        <a href="./index.html"><img id="logo" src="./Typescript_logo_2020.svg.png" alt="main logo"></a>
+        <h1>TypeScript</h1>
+    </div>
+    <div class="content">
+        <div class="leftNav">
+            <ul>
+                <li><a href="./index.html">The Basics</a></li>
+                <li><a href="./forJavascript.html">TypeScript for JavaScript Programmers</a></li>
+                <li><a href="./forJava.html">TypeScript for Java/C# Programmers</a></li>
+                <li><a href="./objects.html">Useful Objects</a></li>
+            </ul>
+        </div>
+        <div class="body">
+            <section>
+                <h2>The Basics</h2>
+                <p>Every value in Javascript can have a set of operations you can run on them. For example, say we have a variable named <code>message</code>: </p>
+                    <pre>
+                        <code>
+                            <span style="color:green">//Accessing the operation 'toLowerCase'</span>
+                            <span style="color:green">//on 'message' and then calling it</span>
+                            <span style="color:lightskyblue">message</span><span style="color:orangered">.toLowerCase</span>();
+                        </code>
+                    </pre>
+                <p>A big difference between Javascript and Typescript is that Javascript does what's called dynamic typing: it can only provide feedback on things after the code has ran. Typescript on the other hand does what's called static typing: it is able to provide predictions about what code is expected before it runs.</p>
+                <p>A good example of this is as follows: </p>
+                    <pre>
+                        <code>
+                            <span style="color: plum">const</span> <span style="color: royalblue">user</span> = {
+                                <span style="color: rgb(201, 114, 196)">name</span>: <span style="color: coral">"John"</span>,
+                                <span style="color: rgb(201, 114, 196)">age</span>: <span style="color: darkolivegreen">30</span>
+                            };
+
+                            <span style="color: royalblue">user</span>.<span style="color: rgb(201, 114, 196)">location</span>; <span style="color:green">//returns undefined</span>"
+                        </code>
+                    </pre>
+                <p>Here, we have a variable named <code>user</code> that is an object with two properties: <code>name</code> and <code>age</code>. We then try to access the property <code>location</code> on <code>user</code>. This will return <code>undefined</code> because <code>location</code> is not a property on <code>user</code>. This is an example of dynamic typing: we can only find out that <code>location</code> is not a property on <code>user</code> after the code has ran. In Typescript, this would show a warning prior to running the code.</p>
+            </section>
+            <section>
+                <h2>Explicit Types</h2>
+                <p>Typescript is able to define explicit typings for variables, parameters, etc.</p>
+                <pre>
+                    <code>
+                        <span style="color:plum">function</span> <span style="color: rgb(160, 91, 13)">greet</span>(<span style="color:rgb(201, 114, 196)">person</span>: <span style="color: teal">string</span>, <span style="color:rgb(201, 114, 196)">date</span>: <span style="color: teal">Date</span>) {
+                            <span style="color: royalblue">console</span>.<span style="color:rgb(201, 114, 196)">log</span>(<span style="color: coral">`Hello</span> <span style="color:rgb(201, 114, 196)">${person}</span><span style="color: coral">, today is</span> <span style="color:rgb(201, 114, 196)">${date.toDateString</span>()<span style="color:rgb(201, 114, 196)">}</span><span style="color: coral">!`</span>);
+                        }
+                    </code>
+                </pre>
+                <p>Here we can see the parameters <code>person</code> and <code>date</code> are of types <code>string</code> and <code>Date</code> respectively. This allows Typescript to restrict things in the future, as well as show you more information in errors.</p>
+            </section>
+            <section>
+                <h2>Strictness</h2>
+                <p>Typescript allows for each developer the amount of strictness that they want. If you only want to validate a small section of your code, Typescript will infer, and use the most lenient type (as well as not checking for <code>null</code>/<code>undefined</code> values). You could also validate as much as you can, and Typescript will follow that strictness.</p>
+                <p>Diving deeper into what that inference means if you aren't validating a whole lot, Typescript will pick the most lenient type when you don't define one: <code>any</code>. This type allows for an experience synonymous with Javascript. However, it is pointless to only use the <code>any</code> type, as you could just use Javascript instead.</p>
+            </section>
+        </div>
+    </div>
+  </body>
+</html>
