@@ -23,6 +23,14 @@
             </ul>
         </div>
         <div class="body">
+            <!--TS DEMO STUFF-->
+            <h1 id="demo" onclick="turnRed()">Click ME!</h1>
+            <script type="module">
+                import { turnRed } from '/build/app.js'
+                window.turnRed = turnRed;
+            </script>
+
+            
             <section>
                 <h2>The Basics</h2>
                 <p>Every value in Javascript can have a set of operations you can run on them. For example, say we have a variable named <code>message</code>: </p>

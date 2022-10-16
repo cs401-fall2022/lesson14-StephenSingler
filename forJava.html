@@ -23,7 +23,11 @@
             </ul>
         </div>
         <div class="body">
-            <h1>TODO</h1><!--remove this later-->
+            <h1 id="demo" onclick="turnRed()">DEMO</h1>
+            <script type="module">
+                import { turnRed } from '/build/app.js'
+                window.turnRed = turnRed;
+            </script><!--remove this later-->
             <section>
                 <h2>JavaScript</h2>
                 <p>If you're coming from Java or C#, it is important to still understand a little bit about Javascript, specifically the runtime behaviors, as Typescript still runtime as Javascript.</p>
