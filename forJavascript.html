@@ -23,19 +23,19 @@
             </ul>
         </div>
         <div class="body">
-            <h1>TODO</h1><!--remove this later-->
             <section>
                 <h2>Types by Inference</h2>
-                <p>typescript infers stuff</p>
+                <p>Typescript is able to determine typings of objects by inference:</p>
                 <pre>
                     <code>
-                        helloworld="helloworld"//this is string
+                        let helloworld="helloworld"//this is string
                     </code>
                 </pre>
+                <p>Here we see that the variable <code>helloworld</code> is inferred to be a string</p>
             </section>
             <section>
-                <h2>defining types</h2>
-                <p>can use interface</p>
+                <h2>Defining Types</h2>
+                <p>One way to do so is to use an interface:</p>
                 <pre>
                     <code>
                         interface user = {
@@ -44,7 +44,7 @@
                         }
                     </code>
                 </pre>
-                <p>then you declare object of interface</p>
+                <p>Then you would declare an object of the interface</p>
                 <pre>
                     <code>
                         const user: User = {
@@ -53,12 +53,12 @@
                         }
                     </code>
                 </pre>
-                <p>Typescript errors if you dont do it right</p>
+                <p>Typescript will throw an error if done incorrectly.</p>
             </section>
             <section>
                 <h2>Composing Types</h2>
                 <h3>Unions</h3>
-                <p>you can make your own types with unions</p>
+                <p>You can make your own custom types with unions:</p>
                 <pre>
                     <code>
                         type WindowStates = "open" | "closed" | "unlocked";
@@ -66,18 +66,17 @@
                     </code>
                 </pre>
                 <h3>Generics</h3>
-                <p>generics exist</p>
+                <p>Generics or void types are also a possibility in Typescript:</p>
                 <pre>
                     <code>
                         type StringArray = Array&ltstring>;
                         type ObjectWithNameArray = Array&lt{ name: string }>;
                     </code>
                 </pre>
-                <p>you can also use them</p>
             </section>
             <section>
                 <h2>Structural Type System</h2>
-                <p>you can use structures of things to define typing</p>
+                <p>You can use the structures of things to define typing. This is another method of inferrential type determination.</p>
                 <pre>
                     <code>
                         interface Point {
@@ -92,6 +91,7 @@
                         logPoint(point); // OK
                     </code>
                 </pre>
+                <p>Here we see the inferred relationship between the <code>Point</code> interface and the variable <code>point</code>.</p>
             </section>
         </div>
     </div>

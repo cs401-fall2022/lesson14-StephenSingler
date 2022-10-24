@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class="body">
-            <h1 id="demo" onclick="turnRed()">DEMO</h1>
+            <h1 id="demo" onclick="turnRed()">CLICK ME</h1>
             <script type="module">
                 import { turnRed } from '/build/app.js'
                 window.turnRed = turnRed;
@@ -34,7 +34,7 @@
             </section>
             <section>
                 <h2>Classes and OOP</h2>
-                <p>C# and Java are mandatory OOP languages, Typescript isn't.</p>
+                <p>C# and Java are mandatory OOP languages, Typescript isn't. This allows for things like:</p>
                 <h3>Free Functions</h3>
                 <p>Javascript functions can live anywhere, data can be passed freely without being in a pre-defined <code>class</code> or <code>struct</code>. There isn't really an implied OOP hierarchy.</p>
                 <h3>Static Classes</h3>
@@ -42,13 +42,29 @@
             </section>
             <section>
                 <h2>OOP in Typescript</h2>
-                <p>you can still do it though, blah</p>
+                <p>If wanted, you could still work with classes and such. It is important to remember, that because of the way Typescript works, you can't query the type of any value, as they're fully erased at runetime. There are functions built in however, to help with this such as <code>typeof</code> and <code>instanceof</code>.</p> 
             </section>
             <section>
                 <h2>Rethinking Types</h2>
                 <p>Typescript's types are a bit different, very useful to think of them as sets.</p>
+                <p>For example, in C# or Java, it would be very difficult to pass something around that is <em>either</em> a <code>string</code> or an <code>int</code>. However, if you were to think of it as belonging to the <em>union</em> of both the <code>string</code> and the <code>number</code> sets, it starts to become clear.</p>
                 <h3>Structural Types</h3>
-                <p>there doesn't have to be a specific declared relationship between stuff as well, structure plays a role here.</p>
+                <p>There doesn't have to be a specific declared relationship between stuff as well, structure plays a role here.</p>
+                <p>For example, you are able to define an instance of an interface without explicitly defining the relationship. If the structure remains the same, it is implied that they are related.</p>
+                <pre>
+                    <code>
+                        interface Point {
+                            x: number;
+                            y: number;
+                        }
+                        function printPoint(p: Point) {
+                            console.log(p.x + ", " + p.y);
+                        }
+                        let point = { x: 12, y: 26 };
+                        printPoint(point); // Prints "12, 26"
+                    </code>
+                </pre>
+                <p>Here we see the implied relationship between the <code>Point</code> interface and the variable <code>point</code>.</p>
             </section>
         </div>
     </div>
